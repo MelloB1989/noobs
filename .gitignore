@@ -11,6 +11,9 @@
 # production
 /build
 
+# firebase
+firebase_key.json
+
 # web
 /src/web
 
