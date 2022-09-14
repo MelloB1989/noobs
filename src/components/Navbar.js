@@ -27,10 +27,10 @@ export default class Navbar extends Component {
                 <li className={this.props.current === "blog" ? "current has-children" : "mx-1"}>
                     <a href="/" title="">Blog</a>
                     <ul className="sub-menu">
-                    <li><a href="single-video.html">Video Post</a></li>
-                    <li><a href="single-audio.html">Audio Post</a></li>
-                    <li><a href="single-gallery.html">Gallery Post</a></li>
-                    <li><a href="single-standard.html">Standard Post</a></li>
+                    <li><Link to="/blogs/technology">Technology</Link></li>
+                    <li><Link to="/blogs/web_dev">Web Development</Link></li>
+                    <li><Link to="/blogs/app_dev">App Development</Link></li>
+                    <li><Link to="/blogs/hacking">Hacking</Link></li>
                     </ul>
                 </li>
                 <li className={this.props.current === "about" ? "current" : "mx-1"}><a href="about.html" title="">About</a></li>

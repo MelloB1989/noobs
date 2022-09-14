@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import api from './api_secrets.json' assert {type: "json"}
+import fetch from "node-fetch";
 
-export default class Blog extends Component {
-  render() {
 
-    const get_contents = async () => {
-      const data = await fetch(/*`${api.URL}`*/"https://test-apis.mellob.co", {
+export default function hello(){
+    return "default"
+}
+
+export async function get_blog_contents() {
+    const data = await fetch(/*`${api.URL}`*/"https://test-apis.mellob.co", {
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Methods': 'GET',
@@ -21,7 +24,7 @@ export default class Blog extends Component {
           return(result.error, "warning")  
           }
           else{
-            return(result)
+            return(result.status)
             //Convert response to HTML
         }
         },
@@ -33,15 +36,11 @@ export default class Blog extends Component {
         }
     )
     return (data)
-    }
+}
 
-    const content = get_contents()
-    console.log(content)
-
-    return (
-      <div>
-        HI <p>{content.title}</p>
-      </div>
-    )
-  }
+export async function test() {
+    const response = await fetch("https://test-apis.mellob.co");
+    const data = await response.json()
+    //console.log(data['blog-content'])
+    return data
 }

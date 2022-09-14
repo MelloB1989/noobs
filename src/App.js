@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Contact from './components/Contact';
+import Blog from './components/Blog';
 
 
 export default class App extends Component {
@@ -27,7 +28,10 @@ export default class App extends Component {
       <Routes>
         <Route path="/" element={<Home />}/>
       <Route path="/contact" element={<Contact />}/>
-      
+      <Route path="/blogs/web_dev" element={<Blog category="web_dev"/>}/>
+      <Route path="/blogs/app_dev" element={<Blog category="app_dev"/>}/>
+      <Route path="/blogs/technology" element={<Blog category="technology"/>}/>
+      <Route path="/blogs/hacking" element={<Blog category="hacking"/>}/>      
       </Routes>
       </BrowserRouter>
       </>

@@ -1,0 +1,27 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-noobs-dev-202816-authRole",
+      "UnauthRoleArn": "arn:aws:iam::950297079198:role/amplify-noobs-dev-202816-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::950297079198:role/amplify-noobs-dev-202816-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-noobs-dev-202816-deployment",
+      "UnauthRoleName": "amplify-noobs-dev-202816-unauthRole",
+      "StackName": "amplify-noobs-dev-202816",
+      "StackId": "arn:aws:cloudformation:ap-south-1:950297079198:stack/amplify-noobs-dev-202816/8046f430-3374-11ed-b24c-062d34b6e6ac",
+      "AmplifyAppId": "dgf2uttchamh6",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-noobs-dev-202816-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "undefined": {}
+      },
+      "function": {
+        "noobs5c226e7d": {
+          "deploymentBucketName": "amplify-noobs-dev-202816-deployment",
+          "s3Key": "amplify-builds/noobs5c226e7d-4e576733744570703470-build.zip"
+        }
+      }
+    }
+  }
+}
