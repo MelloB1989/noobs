@@ -1,61 +1,45 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-export default class Decode extends Component {
-/*
-    constructor(props) {
-        super(props);
-        this.state = {
-          error: null,
-          isLoaded: false,
-          blog_content: '',
-          blog_title : '',
-          blog_date : '',
-          blog_tags : '',
-          blog_type : ''
-        };
-      }
-    */
-    render() {
-    if (this.props.type.toString() === "standard-post-blog") {
-        //const blog_len = blog_content.length;
-        var content_html = (
-            <section className="s-content s-content--narrow s-content--no-padding-bottom">
-
-        <article className="row format-standard">
-
-            <div className="s-content__header col-full">
-                <h1 className="s-content__header-title">
-                    {this.props.blog_title}
-                </h1>
-                <ul className="s-content__header-meta">
-                    <li className="date">{this.props.blog_date}</li>
-                    <li className="cat">
-                        In
-                        <a href="#0">Lifestyle</a>
-                        <a href="#0">Travel</a>
-                    </li>
-                </ul>
-            </div> {/* end s-content__header */}
+export default class Body extends Component {
+  render() {
+    var content_html = (<p></p>)
+    if (this.props.type.toString() === "standard-post-blog"){
+        content_html = (
+        <section className="s-content s-content--narrow s-content--no-padding-bottom">
+            <article className="row format-standard">
     
-            <div className="s-content__media col-full">
-                <div className="s-content__post-thumb">
-                    <img src={this.props.blog_content[0]["image-url"]} 
-                         srcset="images/thumbs/single/standard/standard-2000.jpg 2000w, 
-                                 images/thumbs/single/standard/standard-1000.jpg 1000w, 
-                                 images/thumbs/single/standard/standard-500.jpg 500w" 
-                         sizes="(max-width: 2000px) 100vw, 2000px" alt="" />
-                </div>
-            </div> {/* end s-content__media */}
+                <div className="s-content__header col-full">
+                    <h1 className="s-content__header-title">
+                        {this.props.blog_title}
+                    </h1>
+                    <ul className="s-content__header-meta">
+                        <li className="date">{this.props.blog_date}</li>
+                        <li className="cat">
+                            In 
+                            <a href="/"> Lifestyle</a>
+                            <a href="/">Travel</a>
+                        </li>
+                    </ul>
+                </div> {/* end s-content__header */}
+        
+                <div className="s-content__media col-full">
+                    <div className="s-content__post-thumb">
+                        <img src={this.props.blog_content[0]["image-url"]} 
+                             srcSet={`${this.props.blog_content[0]["image-url"]} 2000w, 
+                                      ${this.props.blog_content[0]["image-url-1000"]} 1000w, 
+                                      ${this.props.blog_content[0]["image-url-500"]} 500w`} 
+                             sizes="(max-width: 2000px) 100vw, 2000px" alt="" />
+                    </div>
+                </div> {/* end s-content__media */}
 
-            <div className="col-full s-content__main">
+                <div className="col-full s-content__main">
 
                 <p className="lead">{this.props.blog_content[1]["lead"]}</p>
                 <p>{this.props.blog_content[1]["lead-next"]}</p>
 
                 {this.props.blog_content.map((component) => { 
-                    
                     if (component['content-type'] === "image") {
-                        content_html = content_html + (
+                        return (
                             <p>
                                 <img src="images/wheel-1000.jpg" 
                                  srcset="images/wheel-2000.jpg 2000w, images/wheel-1000.jpg 1000w, images/wheel-500.jpg 500w" 
@@ -65,7 +49,7 @@ export default class Decode extends Component {
                     }
 
                     else if (component['content-type'] === "large-heading") {
-                        content_html = content_html + (
+                        return (
                             <>
                             <h2>{component["heading"]}</h2>
                             <p>{component["heading-sub-content"]}</p>
@@ -74,7 +58,7 @@ export default class Decode extends Component {
                     }
 
                     else if (component['content-type'] === "blockquote") {
-                        content_html = content_html + (
+                        return (
                             <>
                             <blockquote><p>{component["quote"]}</p></blockquote>
                             <p>{component["quote-sub"]}</p>
@@ -83,7 +67,7 @@ export default class Decode extends Component {
                     }
 
                     else if (component['content-type'] === "small-heading") {
-                        content_html = content_html + (
+                        return (
                             <>
                             <h3>{component["heading"]}</h3>
                             <p>{component["heading-sub-content"]}</p>
@@ -92,16 +76,16 @@ export default class Decode extends Component {
                     }
 
                     else if (component['content-type'] === "code") {
-                        content_html = content_html + (<pre><code>{component["code-content"]}</code></pre>)
+                        return (<pre><code>{component["code-content"]}</code></pre>)
                     }
 
                     else if (component['content-type'] === "paragraph") {
-                        content_html = content_html + (<p>{component["content"]}</p>)
+                        return (<p>{component["content"]}</p>)
                     }
-                    console.log(content_html+"here!!!")
-                    return content_html
+                    //console.log(content_html+"here!!!")
+                    return (<p></p>)
     })}
-                <p className="s-content__tags">
+              <p className="s-content__tags">
                     <span>Post Tags</span>
                     <span className="s-content__tag-list">
                     {this.props.blog_tags.map((tag) => {
@@ -344,10 +328,11 @@ export default class Decode extends Component {
         </div> {/* end comments-wrap */}
 
     </section>
-)
-        return content_html
+        )
     }
-    return content_html
+    else{
+        content_html = (<p>{this.props.type}</p>)
+    }
+    return content_html;
+  }
 }
-}
-//module.exports = decode;

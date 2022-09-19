@@ -6,8 +6,12 @@ or in the "license" file accompanying this file. This file is distributed on an 
 See the License for the specific language governing permissions and limitations under the License.
 */
 
-
-
+var admin = require("firebase-admin");
+var serviceAccount = require("./priv_key.json");
+admin.initializeApp({
+		credential: admin.credential.cert(serviceAccount)
+		});
+let db = admin.firestore();
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -35,9 +39,12 @@ app.get('/api', function(req, res) {
   res.json({success: 'get call succeed!', url: req.url});
 });
 
-app.get('/api/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
+app.get('/api/*', async function(req, res) {
+  // Add your code
+  const post = db.collection('standard-post-blogs').doc('test-blog');
+	const post_content = await post.get();
+  //const post_content = fire.get_api('standard-post-blogs', 'test-blog')
+  res.json(post_content.data());
 });
 
 /****************************

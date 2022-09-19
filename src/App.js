@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Home from './components/Home'
+import React, { Component } from 'react';
+import Home from './components/Home';
 import {
   BrowserRouter,
   Routes,
@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Contact from './components/Contact';
 import Blog from './components/Blog';
+import Auth from './Auth';
 
 
 export default class App extends Component {
@@ -14,14 +15,12 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      css: "s-pageheader s-pageheader--home"
+      css: "s-pageheader s-pageheader--home",
     };
   }
 
   render() {
-
     
-
     return (
       <>
       <BrowserRouter>
@@ -33,6 +32,7 @@ export default class App extends Component {
       <Route path="/blogs/technology" element={<Blog category="technology"/>}/>
       <Route path="/blogs/hacking" element={<Blog category="hacking"/>}/>      
       </Routes>
+      <Auth />
       </BrowserRouter>
       </>
     )

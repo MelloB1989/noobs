@@ -19,7 +19,7 @@
       "function": {
         "noobs5c226e7d": {
           "deploymentBucketName": "amplify-noobs-dev-202816-deployment",
-          "s3Key": "amplify-builds/noobs5c226e7d-4e576733744570703470-build.zip"
+          "s3Key": "amplify-builds/noobs5c226e7d-6b7534636f494f545942-build.zip"
         }
       }
     }

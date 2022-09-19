@@ -10,9 +10,11 @@
 
 # production
 /build
+api_key.txt
 
 # firebase
 firebase_key.json
+/amplify/backend/function/noobs5c226e7d/src/priv_key.json
 
 # web
 /src/web
