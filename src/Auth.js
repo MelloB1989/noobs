@@ -4,7 +4,7 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 //import 'firebase/compat/firestore';
 import Floaters from './components/Floaters';
 
-function Auth() {
+function Auth(props) {
 
     const firebaseConfig = {
         apiKey: "AIzaSyA5k0D_w0KYlXY8zko6n5HC_3KYOTX02ug",
@@ -22,7 +22,7 @@ function Auth() {
 
     const [user] = useAuthState(auth);
   return (
-    <Floaters logged_in={user}/>
+    <Floaters logged_in={user} mode={props.mode} toggleMode={props.toggleMode}/>
   )
 }
 

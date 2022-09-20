@@ -60,7 +60,7 @@ export default class Blog extends Component {
     else if (!this.state.isLoaded){
       return (
         <>
-      <PageHeader css="s-pageheader" featured={false} current="blog"/>
+      <PageHeader css="s-pageheader" toggleMenu={this.props.toggleMenu} menu={this.props.menu} featured={false} current="blog"/>
       <section className="s-content s-content--narrow s-content--no-padding-bottom">
             <article className="row format-standard">
     

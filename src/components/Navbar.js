@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
 import { Outlet, Link } from "react-router-dom";
+//import Button from '@mui/material/Button';
+//import Paper from '@mui/material/Paper';
+
 
 export default class Navbar extends Component {
+/*
+    constructor(props) {
+        super(props);
+        this.state = {
+            menu: "close"
+        };
+      }
+*/
   render() {
+
     return (
         <>
-        <a className="header__toggle-menu" href="/" title="Menu"><span>Menu</span></a>
+        <div className="header__toggle-menu" onClick={this.props.toggleMenu}><span>Menu</span></div>
     
         <nav className="header__nav-wrap">
 

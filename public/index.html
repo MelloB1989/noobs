@@ -41,6 +41,31 @@
   <body>
     <style type="text/css">
 
+.shareicon{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:215px;
+	right:40px;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #777;
+  z-index:100;
+}
+
+.darkm{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:125px;
+	right:40px;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #777;
+  z-index:100;
+}
+
+
 .float{
 	position:fixed;
 	width:60px;
@@ -55,6 +80,49 @@
 
 .my-float{
 	margin-top:16px;
+}
+
+@media only screen and (max-width:600px) {
+  .shareicon{
+	position:fixed;
+	width:40px;
+	height:40px;
+	bottom:155px;
+	right:20px;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #777;
+  z-index:100;
+}
+
+.darkm{
+	position:fixed;
+	width:40px;
+	height:40px;
+	bottom:90px;
+	right:20px;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #777;
+  z-index:100;
+}
+
+
+.float{
+	position:fixed;
+	width:40px;
+	height:40px;
+	bottom:25px;
+	right:20px;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #777;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}   
 }
 
 .wrapper {
@@ -103,7 +171,7 @@
   display:inline-block;
   -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
   background-repeat: no-repeat;
-  animation: shimmer 2.5s infinite;
+  animation: shimmer 0.5s infinite;
   font-size: 50px;
   max-width:2000px;
 }

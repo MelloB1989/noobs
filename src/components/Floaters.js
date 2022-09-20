@@ -4,9 +4,19 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import Fab from '@mui/material/Fab';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import ShareIcon from '@mui/icons-material/Share';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 export default class Floaters extends Component {
-
+/*
+  constructor(props) {
+    super(props);
+    this.state = {
+      mode: "light",
+    };
+  }
+*/
   render() {
 
     const firebaseConfig = {
@@ -29,8 +39,14 @@ export default class Floaters extends Component {
 
     return (
       <div>
+        <Fab className='shareicon' sx={{ color: 'orange', backgroundColor : 'black' }} aria-label="dark-mode">
+          <ShareIcon fontSize="large"/>
+        </Fab>
+        <Fab className='darkm' onClick={this.props.toggleMode} sx={{ color: 'orange', backgroundColor : 'black' }} aria-label="dark-mode">
+          {this.props.mode !== "dark" ? (<DarkModeIcon fontSize="large"/>) : (<LightModeIcon fontSize="large"/>)} 
+        </Fab>
         <Fab className='float' sx={{ color: 'orange', backgroundColor : 'black' }} onClick={signin} aria-label="sign_in">
-            { this.props.logged_in ? (<img src={auth.currentUser.photoURL} alt="profile"/>) : (<LoginRoundedIcon fontSize="large"/>)}
+            { this.props.logged_in ? (<img className="my-float" src={auth.currentUser.photoURL} alt="profile"/>) : (<LoginRoundedIcon fontSize="large"/>)}
         </Fab>
       </div>
     )
