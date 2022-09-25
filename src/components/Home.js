@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BlogResults from './BlogResults';
 import Footer from './Footer';
 import PageHeader from './PageHeader';
+import Shimmer from './Shimmer';
 
 export default class Home extends Component {
   
@@ -46,7 +47,7 @@ export default class Home extends Component {
     return (
       <>
       <PageHeader css="s-pageheader s-pageheader--home" menu={this.props.menu} toggleMenu={this.props.toggleMenu} featured={true} current="home"/>
-      <BlogResults result_articles={this.state.blogs}/>
+      {this.state.isLoaded ? (<BlogResults result_articles={this.state.blogs}/>) : (<Shimmer />)}
       <Footer />
       </>
     )
