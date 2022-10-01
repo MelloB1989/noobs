@@ -15,7 +15,8 @@ let db = admin.firestore();
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
+const { response } = require("express");
 
 // declare a new express app
 const app = express()
@@ -29,64 +30,29 @@ app.use(function(req, res, next) {
   next()
 });
 
-
-/**********************
- * Example get method *
- **********************/
-
-app.get('/api', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
-});
-
 app.get('/api/*', async function(req, res) {
-  // Add your code
-  const post = db.collection('standard-post-blogs').doc('test-blog');
-	const post_content = await post.get();
+  var response = {};
+  if(req.headers.context.toString() === "home_blogs"){
+    const posts = db.collection('categories').doc('home');
+    response = (await posts.get()).data();
+  }
+  else if(req.headers.context.toString() === "get_blog"){
+    const post = db.collection('standard-post-blogs').doc(req.headers.blog_title.toString());
+    response = (await post.get()).data();
+  }
+  else if(req.headers.context.toString() === "get_blogs"){
+    const posts = db.collection('categories').doc(req.headers.category);
+    response = (await posts.get()).data();
+  }
+  else if(req.headers.context.toString() === "featured"){
+    const featured_posts = db.collection('featured').doc('home');
+    response = (await featured_posts.get()).data();
+  }
+  else {
+    response = {"error" : "NO_CONTEXT_FOUND"}
+  }
   //const post_content = fire.get_api('standard-post-blogs', 'test-blog')
-  res.json(post_content.data());
-});
-
-/****************************
-* Example post method *
-****************************/
-
-app.post('/api', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-app.post('/api/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example put method *
-****************************/
-
-app.put('/api', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-app.put('/api/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example delete method *
-****************************/
-
-app.delete('/api', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
-
-app.delete('/api/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
+  res.json(response);
 });
 
 app.listen(3000, function() {

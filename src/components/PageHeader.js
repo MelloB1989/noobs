@@ -182,7 +182,7 @@ export default class PageHeader extends Component {
               {/*<!-- header-content -->*/}
             </header>{" "}
             {/*<!-- header -->*/}
-            {this.props.featured ? <Featured /> : <div />}
+            {this.props.featured ? <Featured featured_blogs={this.props.featured_blogs} /> : <div />}
           </section>
         )}
       </>

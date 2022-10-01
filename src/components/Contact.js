@@ -14,7 +14,7 @@ export default class Contact extends Component {
 
             <div className="s-content__header col-full">
                 <h1 className="s-content__header-title">
-                    Feel Free To Contact Us.
+                    Feel Free To Contact MelloB.
                 </h1>
             </div>
     

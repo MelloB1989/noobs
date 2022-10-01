@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import { Outlet, Link } from "react-router-dom";
+//import Shimmer from './Shimmer'
 
 export default class BlogResults extends Component {
   render() {
-    return (
+    //var articles = Array.from(this.props.result_articles)
+    //console.log(articles)
+    return ( this.props &&
       <>
         <section className="s-content">
           <div className="row masonry-wrap">
@@ -14,6 +18,7 @@ export default class BlogResults extends Component {
                     <article
                       className="masonry__brick entry format-standard"
                       data-aos="fade-up"
+                      key={article.title}
                     >
                       <div className="entry__thumb">
                         <a
@@ -22,7 +27,7 @@ export default class BlogResults extends Component {
                         >
                           <img
                             src={article.thumbnail}
-                            srcset={`${article.thumbnail} 1x, ${article.thumbnail800} 2x`}
+                            srcSet={`${article.thumbnail} 1x, ${article.thumbnail800} 2x`}
                             alt=""
                           />
                         </a>
@@ -34,9 +39,9 @@ export default class BlogResults extends Component {
                             <a href="single-standard.html">{article.date.toString()}</a>
                           </div>
                           <h1 className="entry__title">
-                            <a href="single-standard.html">
+                            <Link to="single-standard.html">
                               {article.title.toString()}
-                            </a>
+                            </Link>
                           </h1>
                         </div>
                         <div className="entry__excerpt">
@@ -57,6 +62,7 @@ export default class BlogResults extends Component {
                     <article
                       className="masonry__brick entry format-quote"
                       data-aos="fade-up"
+                      key={article.quote}
                     >
                       <div className="entry__thumb">
                         <blockquote>
@@ -82,7 +88,7 @@ export default class BlogResults extends Component {
                         >
                           <img
                             src="images/thumbs/masonry/shutterbug-400.jpg"
-                            srcset="images/thumbs/masonry/shutterbug-400.jpg 1x, images/thumbs/masonry/shutterbug-800.jpg 2x"
+                            srcSet="images/thumbs/masonry/shutterbug-400.jpg 1x, images/thumbs/masonry/shutterbug-800.jpg 2x"
                             alt=""
                           />
                         </a>
@@ -127,21 +133,21 @@ export default class BlogResults extends Component {
                           <div className="slider__slide">
                             <img
                               src="images/thumbs/masonry/gallery/gallery-1-400.jpg"
-                              srcset="images/thumbs/masonry/gallery/gallery-1-400.jpg 1x, images/thumbs/masonry/gallery/gallery-1-800.jpg 2x"
+                              srcSet="images/thumbs/masonry/gallery/gallery-1-400.jpg 1x, images/thumbs/masonry/gallery/gallery-1-800.jpg 2x"
                               alt=""
                             />
                           </div>
                           <div className="slider__slide">
                             <img
                               src="images/thumbs/masonry/gallery/gallery-2-400.jpg"
-                              srcset="images/thumbs/masonry/gallery/gallery-2-400.jpg 1x, images/thumbs/masonry/gallery/gallery-2-800.jpg 2x"
+                              srcSet="images/thumbs/masonry/gallery/gallery-2-400.jpg 1x, images/thumbs/masonry/gallery/gallery-2-800.jpg 2x"
                               alt=""
                             />
                           </div>
                           <div className="slider__slide">
                             <img
                               src="images/thumbs/masonry/gallery/gallery-3-400.jpg"
-                              srcset="images/thumbs/masonry/gallery/gallery-3-400.jpg 1x, images/thumbs/masonry/gallery/gallery-3-800.jpg 2x"
+                              srcSet="images/thumbs/masonry/gallery/gallery-3-400.jpg 1x, images/thumbs/masonry/gallery/gallery-3-800.jpg 2x"
                               alt=""
                             />
                           </div>
@@ -189,7 +195,7 @@ export default class BlogResults extends Component {
                         >
                           <img
                             src="images/thumbs/masonry/guitarman-400.jpg"
-                            srcset="images/thumbs/masonry/guitarman-400.jpg 1x, images/thumbs/masonry/guitarman-800.jpg 2x"
+                            srcSet="images/thumbs/masonry/guitarman-400.jpg 1x, images/thumbs/masonry/guitarman-800.jpg 2x"
                             alt=""
                           />
                         </a>
@@ -260,7 +266,7 @@ export default class BlogResults extends Component {
                   );
                 }
                 return <p></p>;
-              })}
+               })}
             </div>{" "}
             {/* end masonry */}
           </div>{" "}
@@ -316,6 +322,7 @@ export default class BlogResults extends Component {
           </div>
         </section>{" "}
         {/* s-content */}
+        <Outlet />
       </>
     );
   }
