@@ -58,44 +58,10 @@ export default class App extends Component {
             element={<Blog toggleMenu={toggleMenu} menu={this.state.menu}/>}
             />
             <Route
-              path="/category/web_dev"
+              path="/category/:category"
               exact={true}
               element={
                 <Blogs
-                  category="web_dev"
-                  toggleMenu={toggleMenu}
-                  menu={this.state.menu}
-                />
-              }
-            />
-            <Route
-              path="/category/app_dev"
-              exact={true}
-              element={
-                <Blogs
-                  category="app_dev"
-                  toggleMenu={toggleMenu}
-                  menu={this.state.menu}
-                />
-              }
-            />
-            <Route
-              path="/category/technology"
-              exact={true}
-              element={
-                <Blogs
-                  category="technology"
-                  toggleMenu={toggleMenu}
-                  menu={this.state.menu}
-                />
-              }
-            />
-            <Route
-              path="/category/hacking"
-              exact={true}
-              element={
-                <Blogs
-                  category="hacking"
                   toggleMenu={toggleMenu}
                   menu={this.state.menu}
                 />

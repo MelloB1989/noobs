@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useParams } from 'react-router-dom'
 
-export default class Blogs extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello</h1>
-      </div>
-    )
-  }
+export default function Blogs() {
+  const params = useParams();
+  return (
+    <div>
+      {params.category}
+    </div>
+  )
 }

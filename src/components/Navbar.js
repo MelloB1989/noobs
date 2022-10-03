@@ -38,16 +38,16 @@ export default class Navbar extends Component {
               </a>
               <ul className="sub-menu">
                 <li>
-                  <Link to="/blogs/technology">Technology</Link>
+                  <Link to="/category/technology">Technology</Link>
                 </li>
                 <li>
-                  <Link to="/blogs/web_dev">Web Development</Link>
+                  <Link to="/category/web_dev">Web Development</Link>
                 </li>
                 <li>
-                  <Link to="/blogs/app_dev">App Development</Link>
+                  <Link to="/category/app_dev">App Development</Link>
                 </li>
                 <li>
-                  <Link to="/blogs/hacking">Hacking</Link>
+                  <Link to="/category/hacking">Hacking</Link>
                 </li>
               </ul>
             </li>
@@ -56,7 +56,7 @@ export default class Navbar extends Component {
                 this.props.current === "blog" ? "current" : "mx-1"
               }
             >
-              <Link to="/blogs" title="">
+              <Link to="/category/all" title="">
                 Blogs
               </Link>
               
