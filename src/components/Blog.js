@@ -4,6 +4,7 @@ import PageHeader from "./PageHeader";
 import Body from "./api_decoder/Body";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+//import Blogs from "./Blogs";
 
 export default function Test(props) {
   const params = useParams();
@@ -41,7 +42,7 @@ export default function Test(props) {
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
           (error) => {
-            isLoaded(true);
+            isLoaded(false);
             Error(error);
             request(true);
           }

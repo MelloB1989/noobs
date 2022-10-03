@@ -1,9 +1,24 @@
 import React, { Component } from "react";
 import { Outlet, Link } from "react-router-dom";
+//import "./main.css"
 //import Blog from "./Blog";
 //import Shimmer from './Shimmer'
 
 export default class BlogResults extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobile: false
+    };
+  }
+
+  componentDidUpdate(){
+    if (Screen.width <= 600){
+      this.setState({mobile: true});
+      console.log(this.state.mobile);
+    }
+  }
+
   render() {
     //var articles = Array.from(this.props.result_articles)
     //console.log(articles)
@@ -26,6 +41,7 @@ export default class BlogResults extends Component {
                         className="masonry__brick entry format-standard"
                         data-aos="fade-up"
                         key={article.title}
+                        style={this.state.mobile ? {width: "auto", position: "0 10px"} : {}}
                       >
                         <div className="entry__thumb">
                           <Link
