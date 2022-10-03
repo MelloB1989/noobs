@@ -38,35 +38,6 @@ export default class Navbar extends Component {
               </a>
               <ul className="sub-menu">
                 <li>
-                  <a href="category.html">Lifestyle</a>
-                </li>
-                <li>
-                  <a href="category.html">Health</a>
-                </li>
-                <li>
-                  <a href="category.html">Family</a>
-                </li>
-                <li>
-                  <a href="category.html">Management</a>
-                </li>
-                <li>
-                  <a href="category.html">Travel</a>
-                </li>
-                <li>
-                  <a href="category.html">Work</a>
-                </li>
-              </ul>
-            </li>
-            <li
-              className={
-                this.props.current === "blog" ? "current has-children" : "mx-1"
-              }
-            >
-              <a href="/" title="">
-                Blog
-              </a>
-              <ul className="sub-menu">
-                <li>
                   <Link to="/blogs/technology">Technology</Link>
                 </li>
                 <li>
@@ -79,6 +50,16 @@ export default class Navbar extends Component {
                   <Link to="/blogs/hacking">Hacking</Link>
                 </li>
               </ul>
+            </li>
+            <li
+              className={
+                this.props.current === "blog" ? "current" : "mx-1"
+              }
+            >
+              <Link to="/blogs" title="">
+                Blogs
+              </Link>
+              
             </li>
             <li className={this.props.current === "about" ? "current" : "mx-1"}>
               <a href="about.html" title="">

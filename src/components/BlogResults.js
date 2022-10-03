@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { Outlet, Link } from "react-router-dom";
+//import Blog from "./Blog";
 //import Shimmer from './Shimmer'
 
 export default class BlogResults extends Component {
   render() {
     //var articles = Array.from(this.props.result_articles)
     //console.log(articles)
+    /*
+    const link_to = (blog_t) => {
+      <Blog blog={blog_t}/>
+    }
+    */
     return ( this.props &&
       <>
         <section className="s-content">
@@ -21,8 +27,8 @@ export default class BlogResults extends Component {
                       key={article.title}
                     >
                       <div className="entry__thumb">
-                        <a
-                          href="single-standard.html"
+                        <Link
+                          to={`/blogs/${article.id}`}
                           className="entry__thumb-link"
                         >
                           <img
@@ -30,7 +36,7 @@ export default class BlogResults extends Component {
                             srcSet={`${article.thumbnail} 1x, ${article.thumbnail800} 2x`}
                             alt=""
                           />
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="entry__text">
@@ -39,7 +45,7 @@ export default class BlogResults extends Component {
                             <a href="single-standard.html">{article.date.toString()}</a>
                           </div>
                           <h1 className="entry__title">
-                            <Link to="single-standard.html">
+                            <Link to={`/blogs/${article.id}`}>
                               {article.title.toString()}
                             </Link>
                           </h1>

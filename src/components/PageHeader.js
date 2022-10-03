@@ -23,7 +23,7 @@ export default class PageHeader extends Component {
               <header className="header">
                 <div className="header__content row">
                   <div className="header__logo">
-                    <a className="logo" href="index.html">
+                    <a className="logo" href="/">
                       <img
                         src="https://s3.ap-south-1.amazonaws.com/cdn.socify.co.in/noobs/images/logo.gif"
                         alt="Homepage"
@@ -101,7 +101,7 @@ export default class PageHeader extends Component {
             <header className="header">
               <div className="header__content row">
                 <div className="header__logo">
-                  <a className="logo" href="index.html">
+                  <a className="logo" href="/">
                     <img
                       src="https://s3.ap-south-1.amazonaws.com/cdn.socify.co.in/noobs/images/logo.gif"
                       alt="Homepage"

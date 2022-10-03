@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import Home from "./components/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from "./components/Contact";
-import Blog from "./components/Blog";
+import Blogs from "./components/Blogs";
 import Auth from "./Auth";
+import Blog from "./components/Blog";
+
 
 export default class App extends Component {
   constructor(props) {
@@ -51,11 +53,15 @@ export default class App extends Component {
                 <Contact toggleMenu={toggleMenu} menu={this.state.menu} />
               }
             />
+            <Route 
+            path="/blogs/:id"
+            element={<Blog toggleMenu={toggleMenu} menu={this.state.menu}/>}
+            />
             <Route
-              path="/blogs/web_dev"
+              path="/category/web_dev"
               exact={true}
               element={
-                <Blog
+                <Blogs
                   category="web_dev"
                   toggleMenu={toggleMenu}
                   menu={this.state.menu}
@@ -63,10 +69,10 @@ export default class App extends Component {
               }
             />
             <Route
-              path="/blogs/app_dev"
+              path="/category/app_dev"
               exact={true}
               element={
-                <Blog
+                <Blogs
                   category="app_dev"
                   toggleMenu={toggleMenu}
                   menu={this.state.menu}
@@ -74,10 +80,10 @@ export default class App extends Component {
               }
             />
             <Route
-              path="/blogs/technology"
+              path="/category/technology"
               exact={true}
               element={
-                <Blog
+                <Blogs
                   category="technology"
                   toggleMenu={toggleMenu}
                   menu={this.state.menu}
@@ -85,10 +91,10 @@ export default class App extends Component {
               }
             />
             <Route
-              path="/blogs/hacking"
+              path="/category/hacking"
               exact={true}
               element={
-                <Blog
+                <Blogs
                   category="hacking"
                   toggleMenu={toggleMenu}
                   menu={this.state.menu}
