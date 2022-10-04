@@ -14,9 +14,9 @@ export default class Featured extends Component {
                     <div className="entry" style={{"backgroundImage" : `url(${this.props.featured_blogs.one_img})`}}>
                         
                         <div className="entry__content">
-                            <span className="entry__category"><Link to={this.props.featured_blogs.one}>{this.props.featured_blogs.one_cat}</Link></span>
+                            <span className="entry__category"><Link to={`/category/${this.props.featured_blogs.one_cat}`}>{this.props.featured_blogs.one_cat}</Link></span>
 
-                            <h1><a href="#0" title="">{this.props.featured_blogs.one_title}</a></h1>
+                            <h1><Link to={`/blogs/${this.props.featured_blogs.one}`} title="">{this.props.featured_blogs.one_title}</Link></h1>
 
                             <div className="entry__info">
                                 <a href="#0" className="entry__profile-pic">
@@ -38,9 +38,9 @@ export default class Featured extends Component {
                     <div className="entry" style={{backgroundImage : `url(${this.props.featured_blogs.two_img})`}}>
                         
                         <div className="entry__content">
-                            <span className="entry__category"><Link to={this.props.featured_blogs.two}>{this.props.featured_blogs.two_cat}</Link></span>
+                            <span className="entry__category"><Link to={`category/${this.props.featured_blogs.two_cat}`}>{this.props.featured_blogs.two_cat}</Link></span>
 
-                            <h1><a href="#0" title="">{this.props.featured_blogs.two_title}</a></h1>
+                            <h1><Link to={`blogs/${this.props.featured_blogs.two}`} title="">{this.props.featured_blogs.two_title}</Link></h1>
 
                             <div className="entry__info">
                                 <a href="#0" className="entry__profile-pic">
@@ -59,9 +59,9 @@ export default class Featured extends Component {
                     <div className="entry" style={{backgroundImage : `url(${this.props.featured_blogs.th_img})`}}>
 
                         <div className="entry__content">
-                            <span className="entry__category"><Link to={this.props.featured_blogs.th}>{this.props.featured_blogs.th_cat}</Link></span>
+                            <span className="entry__category"><Link to={`category/${this.props.featured_blogs.th_cat}`}>{this.props.featured_blogs.th_cat}</Link></span>
 
-                            <h1><a href="#0" title="">{this.props.featured_blogs.th_title}</a></h1>
+                            <h1><Link to={`blogs/${this.props.featured_blogs.th}`} title="">{this.props.featured_blogs.th_title}</Link></h1>
 
                             <div className="entry__info">
                                 <a href="#0" className="entry__profile-pic">

@@ -16,36 +16,20 @@ export default class Footer extends Component {
     
                         <ul className="s-footer__linklist">
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/blog">Blog</Link></li>
+                            <li><Link to="/blogs/all">Blog</Link></li>
                             <li><Link to="/about">About</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                             <li><Link to="/policy">Privacy Policy</Link></li>
                         </ul>
     
                     </div>
-    
-                    <div className="col-two md-four mob-full s-footer__archives">
-                            
-                        <h4>Archives</h4>
-    
-                        <ul className="s-footer__linklist">
-                            <li><a href="/">January 2018</a></li>
-                            <li><a href="/">December 2017</a></li>
-                            <li><a href="/">November 2017</a></li>
-                            <li><a href="/">October 2017</a></li>
-                            <li><a href="/">September 2017</a></li>
-                            <li><a href="/">August 2017</a></li>
-                        </ul>
-    
-                    </div>
-    
                     <div className="col-two md-four mob-full s-footer__social">
                             
                         <h4>Social</h4>
     
                         <ul className="s-footer__linklist">
                             <li><a href="/">Facebook</a></li>
-                            <li><a href="/">Instagram</a></li>
+                            <li><a href="https://instagram.com/MelloB1989">Instagram</a></li>
                             <li><a href="/">Twitter</a></li>
                             <li><a href="/">Pinterest</a></li>
                             <li><a href="/">Google+</a></li>
@@ -81,7 +65,9 @@ export default class Footer extends Component {
                 <div className="row">
                     <div className="col-full">
                         <div className="s-footer__copyright">
-                            <span>© Copyright CoffeeCodes 2022</span> 
+                            <span>© Copyright CoffeeCodes 2022</span>
+                            <span>Crafted by MelloB</span> 
+                            <span>Website still in BETA.</span>
                             <span>Site Template Credits to <a href="https://colorlib.com/">Colorlib</a> and <a href="https://themeslab.org/" target="_blank" rel="noreferrer">Themeslab</a></span>
                         </div>
     

@@ -41,7 +41,6 @@ export default class BlogResults extends Component {
                         className="masonry__brick entry format-standard"
                         data-aos="fade-up"
                         key={article.title}
-                        style={this.state.mobile ? {width: "auto", position: "0 10px"} : {}}
                       >
                         <div className="entry__thumb">
                           <Link
@@ -299,55 +298,6 @@ export default class BlogResults extends Component {
               {/* end masonry */}
             </div>{" "}
             {/* end masonry-wrap */}
-            <div className="row">
-              <div className="col-full">
-                <nav className="pgn">
-                  <ul>
-                    <li>
-                      <a className="pgn__prev" href="#0">
-                        Prev
-                      </a>
-                    </li>
-                    <li>
-                      <a className="pgn__num" href="#0">
-                        1
-                      </a>
-                    </li>
-                    <li>
-                      <span className="pgn__num current">2</span>
-                    </li>
-                    <li>
-                      <a className="pgn__num" href="#0">
-                        3
-                      </a>
-                    </li>
-                    <li>
-                      <a className="pgn__num" href="#0">
-                        4
-                      </a>
-                    </li>
-                    <li>
-                      <a className="pgn__num" href="#0">
-                        5
-                      </a>
-                    </li>
-                    <li>
-                      <span className="pgn__num dots">…</span>
-                    </li>
-                    <li>
-                      <a className="pgn__num" href="#0">
-                        8
-                      </a>
-                    </li>
-                    <li>
-                      <a className="pgn__next" href="#0">
-                        Next
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
           </section>{" "}
           {/* s-content */}
           <Outlet />

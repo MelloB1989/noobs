@@ -15,8 +15,7 @@ export default class Body extends Component {
                 <li className="date">{this.props.blog_date}</li>
                 <li className="cat">
                   In
-                  <a href="/"> Lifestyle</a>
-                  <a href="/">Travel</a>
+                  <a href="/"> Hacking</a>
                 </li>
               </ul>
             </div>{" "}
